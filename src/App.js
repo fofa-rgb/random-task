@@ -1,25 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
+import { useGetProductsQuery } from './app/api';
+import ProductCard from './components/ProductCard';
 
 function App() {
+  const {data, isLoading, isError, isFetching, error} = useGetProductsQuery();
+
+  //console.log("!!", data, isFetching, isLoading, isError);
+
+
+  if (isLoading || isFetching) {
+    return (
+      <div class="container">
+        <div class="loader"></div>
+      </div>);
+  }
+
+
+  if (error) {
+    return <div>Error loading products</div>;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Products</h1>
+      <ul>
+        {data?.map((product) => (
+          <ProductCard title={product.title}/>
+        ))}
+      </ul>
     </div>
   );
-}
+};
+
+
 
 export default App;
