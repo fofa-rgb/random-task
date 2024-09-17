@@ -1,0 +1,38 @@
+
+
+
+.sticky-header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: #fafafa;
+    padding: 15px;
+    z-index: 100;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.icon{
+    font-size: 24px;
+}
+
+.icon:hover{
+    cursor: pointer;
+}
+.title {
+    margin: 0;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--textColor);
+}
+
+.title:hover {
+    color: #007bff; 
+}
+
+
+
+
+
+
+

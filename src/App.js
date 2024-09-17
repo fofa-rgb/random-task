@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import { useGetProductsQuery } from './app/api';
+import { useGetProductsQuery } from './app/apiSlice';
+import StickyHeader from './components/StickyHeader';
 import ProductCard from './components/ProductCard';
 
 function App() {
@@ -18,14 +19,19 @@ function App() {
 
 
   if (error) {
-    return <div>Error loading products</div>;
+    return <div><h1>Error loading products</h1></div>;
   }
   return (
-    <div class="product-list">
-        {data?.map((product) => (
-          <ProductCard product={product} key={product.id}/>
-        ))}
-    </div>
+
+    <div>
+        <StickyHeader />
+        <div class="product-list">
+            {data?.map((product) => (
+              <ProductCard product={product} key={product.id}/>
+            ))}
+        </div>
+      </div>
+    
   );
 };
 

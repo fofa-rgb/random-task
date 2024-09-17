@@ -1,0 +1,44 @@
+.sidebar-filter-data {
+    background-color: lightblue;
+    color: #fff;
+    width: 250px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: 850ms;
+  }
+  
+  .sidebar-filter-data.active {
+    z-index: 1000;
+    right: 0;
+    transition: 350ms;
+  }
+  
+  .hide-icon {
+    font-size: 25px;
+    width: fit-content;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .filter-data {
+    color: red;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+    gap: 45px;
+    width: 100%;
+    padding: 8px 24px;
+    background-color: lightgreen;
+  }
+  
+  .filter-data span {
+    padding: 5px;
+  }
+  
+  .filter-data span:hover {
+    background-color: #1a83ff;
+    cursor: pointer;
+  }

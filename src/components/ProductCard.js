@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './ProductCard.css'
 import {useRive, Layout, Fit, Alignment, EventType} from '@rive-app/react-canvas';
 
+
 export const RiveBtn = ({ RiveComponent }) => {
     return <RiveComponent style={{ width: "50%" }} />;
 };
@@ -17,6 +18,9 @@ function ProductCard({ product }) {
         }),
         autoplay: true,
     });
+
+    
+
 
     const onRiveEventReceived = (riveEvent) => {
         const eventData = riveEvent.data;
