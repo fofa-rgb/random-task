@@ -5,6 +5,14 @@
   justify-content: center;
 }
 
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: aquamarine;
+}
 .loader {
   border: 16px solid #f3f3f3; 
   border-top: 16px solid #3498db; 

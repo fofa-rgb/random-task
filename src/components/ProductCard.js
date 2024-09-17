@@ -1,10 +1,17 @@
 import React from 'react';
 import './ProductCard.css'
 
-function ProductCard({title}) {
+function ProductCard({product}) {
     return (
-        <div class="card">
-            <h1>{title}</h1>
+        <div className="product-card">
+            <img src={product.image} alt={product.title} class="product-image" />
+            <div className="product-details">
+                <h2 className="product-title">{product.title}</h2>
+                <div className="product-footer">
+                    <p className="product-price">${product.price}</p>
+                    <button className="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
         </div>
     );
 }

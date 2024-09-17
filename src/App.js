@@ -21,13 +21,10 @@ function App() {
     return <div>Error loading products</div>;
   }
   return (
-    <div>
-      <h1>Products</h1>
-      <ul>
+    <div class="product-list">
         {data?.map((product) => (
-          <ProductCard title={product.title}/>
+          <ProductCard product={product} key={product.id}/>
         ))}
-      </ul>
     </div>
   );
 };
