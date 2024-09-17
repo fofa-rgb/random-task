@@ -1,15 +1,58 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import './ProductCard.css'
+import {useRive, Layout, Fit, Alignment, EventType} from '@rive-app/react-canvas';
 
-function ProductCard({product}) {
+export const RiveBtn = ({ RiveComponent }) => {
+    return <RiveComponent style={{ width: "50%" }} />;
+};
+
+function ProductCard({ product }) {
+    const { rive, RiveComponent } = useRive({
+        src: "purchase.riv",
+        stateMachines: "add to cart",
+        layout: new Layout({
+            fit: Fit.FitWidth, 
+            alignment: Alignment.Center,
+        }),
+        autoplay: true,
+    });
+
+    const onRiveEventReceived = (riveEvent) => {
+        const eventData = riveEvent.data;
+        //console.log(eventData[0]);
+        const stateName =eventData[0];
+        switch (stateName) {
+            case "idle in":
+                document.body.style.cursor = "pointer";
+                break;
+            case "idle ex":
+                document.body.style.cursor = "auto";
+                break;
+            case "idle in click ex":
+                    console.log("i just got touched");
+                    break;
+            default:
+                console.log("Event not recognized");
+                console.log(riveEvent);
+                break;
+        }
+    };
+
+    useEffect(() => {
+        if (rive) {
+            rive.on(EventType.StateChange, onRiveEventReceived);
+        }
+    }, [rive]);
+
     return (
         <div className="product-card">
-            <img src={product.image} alt={product.title} class="product-image" />
+            <img src={product.image} alt={product.title} className="product-image" />
             <div className="product-details">
                 <h2 className="product-title">{product.title}</h2>
                 <div className="product-footer">
                     <p className="product-price">${product.price}</p>
-                    <button className="add-to-cart-btn">Add to Cart</button>
+                    <RiveBtn rive={rive} RiveComponent={RiveComponent} />
                 </div>
             </div>
         </div>
