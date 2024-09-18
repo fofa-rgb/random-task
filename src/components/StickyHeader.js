@@ -3,8 +3,8 @@ import './StickyHeader.css';
 import { useState } from 'react';
 import SideBar from './SideBar';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleOff, toggleOn } from '../app/sideBarSlice';
-import { newValue } from '../app/searchQuerySlice';
+import { toggleOff, toggleOn } from '../state/sideBarSlice';
+import { newValue } from '../state/searchQuerySlice';
 
 function StickyHeader  () {
     const sideBarShowing= useSelector(state=> state.sideBar.value);

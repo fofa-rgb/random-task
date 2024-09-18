@@ -1,6 +1,6 @@
 
 import './App.css';
-import { useGetProductsQuery } from './app/apiSlice';
+import { useGetProductsQuery } from './state/apiSlice';
 import StickyHeader from './components/StickyHeader';
 import ProductCard from './components/ProductCard';
 import { useSelector } from 'react-redux';

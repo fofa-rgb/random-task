@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './ProductCard.css'
 import {useRive, Layout, Fit, Alignment, EventType} from '@rive-app/react-canvas';
 import { useSelector, useDispatch } from 'react-redux';
-import { addProduct, removeProduct } from '../app/cartSlice';
+import { addProduct, removeProduct } from '../state/cartSlice';
 
 export const RiveBtn = ({ RiveComponent }) => {
     return <RiveComponent style={{ width: "50%" }} />;
