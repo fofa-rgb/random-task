@@ -5,7 +5,6 @@ import { toggleOff } from "../state/sideBarSlice";
 import CartItem from "./CartItem";
 
 function SideBar({showSideBar}) {
-    const sideBarShowing= useSelector(state=> state.sideBar.value);
     const cartProducts = useSelector((state) => state.cart.value);
     const dispatch = useDispatch();
   

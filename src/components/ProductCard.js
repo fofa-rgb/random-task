@@ -52,7 +52,7 @@ function ProductCard({ product }) {
         if (rive) { 
             rive.on(EventType.StateChange, onRiveEventReceived);
         }
-       
+       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [rive]);
    
 
