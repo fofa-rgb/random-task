@@ -1,9 +1,8 @@
 import React from 'react';
 import './StickyHeader.css';
-import { useState } from 'react';
 import SideBar from './SideBar';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleOff, toggleOn } from '../state/sideBarSlice';
+import {  toggleOn } from '../state/sideBarSlice';
 import { newValue } from '../state/searchQuerySlice';
 
 function StickyHeader  () {

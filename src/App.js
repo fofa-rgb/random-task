@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 
 function App() {
-  const {data, isLoading, isError, isFetching, error} = useGetProductsQuery();
+  const {data, isLoading, isFetching, error} = useGetProductsQuery();
   const searchQuery= useSelector(state=> state.searchQuery.value);
   //console.log("!!", data, isFetching, isLoading, isError);
   const filteredProducts = data?.filter(product =>

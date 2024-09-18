@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
-import { useState } from 'react';
+
 import './ProductCard.css'
 import {useRive, Layout, Fit, Alignment, EventType} from '@rive-app/react-canvas';
-import { useSelector, useDispatch } from 'react-redux';
-import { addProduct, removeProduct } from '../state/cartSlice';
+import {  useDispatch } from 'react-redux';
+import { addProduct } from '../state/cartSlice';
 
 export const RiveBtn = ({ RiveComponent }) => {
     return <RiveComponent style={{ width: "50%" }} />;
 };
 
 function ProductCard({ product }) {
-
-    const cart= useSelector(state=> state.cart.value);
     const dispatch = useDispatch();
 
 
@@ -27,7 +25,7 @@ function ProductCard({ product }) {
 
     
 
-
+    
     const onRiveEventReceived = (riveEvent) => {
         const eventData = riveEvent.data;
         //console.log(eventData[0]);
@@ -51,10 +49,12 @@ function ProductCard({ product }) {
     };
 
     useEffect(() => {
-        if (rive) {
+        if (rive) { 
             rive.on(EventType.StateChange, onRiveEventReceived);
         }
+       
     }, [rive]);
+   
 
     return (
         <div className="product-card">
