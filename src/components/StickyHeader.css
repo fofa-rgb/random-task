@@ -9,7 +9,23 @@
     padding: 15px;
     z-index: 100;
     justify-content: space-between;
+    align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.search-input {
+    padding: 8px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px; 
+}
+
+.search-input:focus {
+    outline: none;
+    border: none;
 }
 
 .icon{
@@ -19,6 +35,7 @@
 .icon:hover{
     cursor: pointer;
 }
+
 .title {
     margin: 0;
     font-size: 24px;
