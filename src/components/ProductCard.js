@@ -2,13 +2,19 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import './ProductCard.css'
 import {useRive, Layout, Fit, Alignment, EventType} from '@rive-app/react-canvas';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { addProduct, removeProduct } from '../app/cartSlice';
 
 export const RiveBtn = ({ RiveComponent }) => {
     return <RiveComponent style={{ width: "50%" }} />;
 };
 
 function ProductCard({ product }) {
+
+    const cart= useSelector(state=> state.cart.value);
+    const dispatch = useDispatch();
+
+
     const { rive, RiveComponent } = useRive({
         src: "purchase.riv",
         stateMachines: "add to cart",
@@ -34,6 +40,7 @@ function ProductCard({ product }) {
                 document.body.style.cursor = "auto";
                 break;
             case "idle in click ex":
+                    dispatch(addProduct(product));
                     console.log("i just got touched");
                     break;
             default:

@@ -4,11 +4,12 @@ import { useGetProductsQuery } from './app/apiSlice';
 import StickyHeader from './components/StickyHeader';
 import ProductCard from './components/ProductCard';
 
+
 function App() {
   const {data, isLoading, isError, isFetching, error} = useGetProductsQuery();
 
   //console.log("!!", data, isFetching, isLoading, isError);
-
+ 
 
   if (isLoading || isFetching) {
     return (

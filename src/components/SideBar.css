@@ -16,10 +16,17 @@
   }
   
   .hide-icon {
-    font-size: 25px;
-    width: fit-content;
-    color: #fff;
+    width: 15px;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
     cursor: pointer;
+    color: #888;
+    transition: color 0.3s ease;
+  }
+  
+  .hide-icon:hover {
+    color: #ff4444;
   }
   
   .filter-data {
@@ -28,17 +35,14 @@
     flex-direction: column;
     height: 100vh;
     overflow-y: scroll;
-    gap: 45px;
+    gap: 10px;
     width: 100%;
     padding: 8px 24px;
-    background-color: lightgreen;
+    background-color: var(--secondaryColor);
   }
   
   .filter-data span {
     padding: 5px;
   }
   
-  .filter-data span:hover {
-    background-color: #1a83ff;
-    cursor: pointer;
-  }
+  

@@ -2,9 +2,11 @@ import { useState } from "react";
 import "./SideBar.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleOff } from "../app/sideBarSlice";
+import CartItem from "./CartItem";
 
 function SideBar({showSideBar}) {
     const sideBarShowing= useSelector(state=> state.sideBar.value);
+    const cartProducts = useSelector((state) => state.cart.value);
     const dispatch = useDispatch();
   
   return (
@@ -25,25 +27,15 @@ function SideBar({showSideBar}) {
       >
         <div className="filter-data">
           <span className="hide-icon" onClick={() => dispatch(toggleOff())}>
-            X
+            &times;
           </span>
-          <span>Filter 1</span>
-          <span>Filter 2</span>
-          <span>Filter 3</span>
-          <span>Filter 4</span>
-          <span>Filter 5</span>
-          <span>Filter 6</span>
-          <span>Filter 2</span>
-          <span>Filter 3</span>
-          <span>Filter 4</span>
-          <span>Filter 5</span>
-          <span>Filter 6</span>
-          <span>Filter 6</span>
-          <span>Filter 2</span>
-          <span>Filter 3</span>
-          <span>Filter 4</span>
-          <span>Filter 5</span>
-          <span>Filter 6</span>
+          {cartProducts.length === 0 ? (
+        <p>Your cart is empty</p>
+      ) : (
+        cartProducts.map((product) => (
+          <CartItem key={product.id} product={product} />
+        ))
+      )}
         </div>
       </div>
     </div>
