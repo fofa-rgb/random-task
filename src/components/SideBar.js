@@ -3,7 +3,6 @@ import "./SideBar.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleOff } from "../state/sideBarSlice";
 import CartItem from "./CartItem";
-import { useEffect } from "react";
 import { clearCart } from "../state/cartSlice";
 
 function SideBar({showSideBar}) {
@@ -12,11 +11,7 @@ function SideBar({showSideBar}) {
     const dispatch = useDispatch();
     
     
-    useEffect(()=>{
-      for(let i=0; i<cartProducts; i++){
-        totalPrice+= cartProducts[i].price +cartProducts[i].amount;
-      }
-    },[cartProducts])
+    
 
   return (
     <div className="sidebar-filter">
