@@ -5,13 +5,14 @@ import {useRive, Layout, Fit, Alignment, EventType} from '@rive-app/react-canvas
 import {  useDispatch } from 'react-redux';
 import { addProduct } from '../state/cartSlice';
 
-export const RiveBtn = ({ RiveComponent }) => {
-    return <RiveComponent style={{ width: "50%" }} />;
+
+export const RiveBtn = ({ RiveComponent}) => {
+    return <RiveComponent style={{width:"50%"}} />;
 };
 
-function ProductCard({ product }) {
+function ProductCard({ product, onClick }) {
     const dispatch = useDispatch();
-
+    
 
     const { rive, RiveComponent } = useRive({
         src: "purchase.riv",
@@ -55,9 +56,10 @@ function ProductCard({ product }) {
        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [rive]);
    
-
+   
     return (
-        <div className="product-card">
+        <>
+        <div className="product-card" onClick={onClick}>
             <img src={product.image} alt={product.title} className="product-image" />
             <div className="product-details">
                 <h2 className="product-title">{product.title}</h2>
@@ -67,6 +69,8 @@ function ProductCard({ product }) {
                 </div>
             </div>
         </div>
+         
+          </>
     );
 }
 

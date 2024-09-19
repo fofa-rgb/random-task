@@ -5,6 +5,7 @@
     display: flex;
     position: sticky;
     top: 0;
+    flex-wrap: wrap;
     background-color: var(--primaryColor);
     padding: 15px;
     z-index: 100;
@@ -20,7 +21,7 @@
     border: none;
     border-bottom: 1px solid #ccc;
     border-radius: 4px;
-    width: 200px; 
+    width: 45vw; 
 }
 
 .search-input:focus {
@@ -47,9 +48,19 @@
     color: #007bff; 
 }
 
+.right-section{ 
+    display: flex;
+    width: 73vw;
+    justify-content: space-between;
+}
 
-
-
-
+@media only screen and (max-width: 600px){
+	.sticky-header{
+        flex-direction: column;
+    }
+    .right-section{ 
+        width: 90vw;
+    }
+}
 
 

@@ -25,17 +25,20 @@ function StickyHeader  () {
 
     return (
         <>
+        
             <header className="sticky-header">
                 <h1 className="title" onClick={scrollToTop}>Random</h1>
-                <input
-                    type="text"
-                    placeholder="Search for products..."
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                    className="search-input"
-                />
-                <div className="icon" aria-label="Increment value"
-                onClick={() => dispatch(toggleOn())}>🛒</div>
+                <div className='right-section'>
+                    <input
+                        type="text"
+                        placeholder="Search for products..."
+                        value={searchQuery}
+                        onChange={handleSearchChange}
+                        className="search-input"
+                    />
+                    <div className="icon" aria-label="Increment value"
+                    onClick={() => dispatch(toggleOn())}>🛒</div>
+                </div>
                 
             </header>
             <SideBar showSideBar={sideBarShowing}/>
