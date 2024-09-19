@@ -10,6 +10,8 @@
   }
   
   .sidebar-filter-data.active {
+    height: 100%;
+
     z-index: 1000;
     right: 0;
     transition: 350ms;
@@ -21,7 +23,7 @@
     border: none;
     font-size: 30px;
     cursor: pointer;
-    color: #888;
+    color: #0e0e0e;
     transition: color 0.3s ease;
   }
   
@@ -33,7 +35,6 @@
     color: red;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     overflow-y: scroll;
     gap: 10px;
     width: 100%;

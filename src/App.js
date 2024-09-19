@@ -13,11 +13,10 @@ function App() {
   const dispatch = useDispatch();
   const searchQuery= useSelector(state=> state.searchQuery.value);
   const modal= useSelector(state=> state.modal.value);
-  //console.log("!!", data, isFetching, isLoading, isError);
   const filteredProducts = data?.filter(product => product.title.toLowerCase().includes(searchQuery.toLowerCase()));
  
   const openModal = (product) => {
-    console.log('haha')
+
     dispatch(toggleOn());
     dispatch(setProduct(product));
   };

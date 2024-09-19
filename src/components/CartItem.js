@@ -7,7 +7,6 @@ function CartItem({product}) {
     const dispatch = useDispatch();
 
     function removeItem(){
-        console.log("ameowmeow");
         dispatch(removeProduct(product.id));
     }
     return (

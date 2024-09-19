@@ -29,7 +29,6 @@ function ProductCard({ product, onClick }) {
     
     const onRiveEventReceived = (riveEvent) => {
         const eventData = riveEvent.data;
-        //console.log(eventData[0]);
         const stateName =eventData[0];
         switch (stateName) {
             case "idle in":
@@ -40,11 +39,8 @@ function ProductCard({ product, onClick }) {
                 break;
             case "idle in click ex":
                     dispatch(addProduct(product));
-                    console.log("i just got touched");
                     break;
             default:
-                console.log("Event not recognized");
-                console.log(riveEvent);
                 break;
         }
     };
@@ -59,12 +55,12 @@ function ProductCard({ product, onClick }) {
    
     return (
         <>
-        <div className="product-card" onClick={onClick}>
-            <img src={product.image} alt={product.title} className="product-image" />
+        <div className="product-card">
+            <img src={product.image} alt={product.title} className="product-image" onClick={onClick}/>
             <div className="product-details">
-                <h2 className="product-title">{product.title}</h2>
-                <div className="product-footer">
-                    <p className="product-price">${product.price}</p>
+                <h2 className="product-title" onClick={onClick}>{product.title}</h2>
+                <div className="product-footer" >
+                    <p className="product-price" onClick={onClick}>${product.price}</p>
                     <RiveBtn rive={rive} RiveComponent={RiveComponent} />
                 </div>
             </div>

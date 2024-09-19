@@ -11,7 +11,7 @@ function Modal({ onClose}) {
                 <img src={product.image} alt={product.title} className="modal-product-image" />
                 <h2>{product.title}</h2>
                 <div className='text-container'><p>{product.description}</p></div>
-                <button onClick={onClose}>Close</button>
+                <button className="modal-button" onClick={onClose}>Close</button>
             </div>     
         </div>
         </div>
