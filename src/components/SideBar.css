@@ -26,11 +26,16 @@
     color: #0e0e0e;
     transition: color 0.3s ease;
   }
-  
+  .price {
+    color: var(--textColor)
+  }
   .hide-icon:hover {
     color: #ff4444;
   }
-  
+  .top-part{
+    display: flex;
+    justify-content: space-between;
+  }
   .filter-data {
     color: red;
     display: flex;

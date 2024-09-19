@@ -38,8 +38,8 @@ function ProductCard({ product, onClick }) {
                 document.body.style.cursor = "auto";
                 break;
             case "idle in click ex":
-                    dispatch(addProduct(product));
-                    break;
+                dispatch(addProduct(product));
+                break;
             default:
                 break;
         }
